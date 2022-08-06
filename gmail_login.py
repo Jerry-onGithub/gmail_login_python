@@ -10,15 +10,15 @@ from time import sleep
 
 
 if __name__ == '__main__':
-    password ='ethiopia'
-    username = 'aboye0123'
-    driver = uc.Chrome(version_main=103)
+    password =''    #input password
+    email = ''   #input email
+    driver = uc.Chrome(version_main=103)    #change this to your current browser version
 
     driver.delete_all_cookies()
     driver.get('https://accounts.google.com/signin/v2/identifier?service=mail&passive=1209600&osid=1&continue=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&followup=https%3A%2F%2Fmail.google.com%2Fmail%2Fu%2F0%2F&emr=1&flowName=GlifWebSignIn&flowEntry=ServiceLogin')
     sleep(3)
 
-    driver.find_element_by_xpath('//input[@type="email"]').send_keys(username)
+    driver.find_element_by_xpath('//input[@type="email"]').send_keys(email)
     driver.find_element_by_xpath('//*[@id="identifierNext"]').click()
 
     sleep(5)
